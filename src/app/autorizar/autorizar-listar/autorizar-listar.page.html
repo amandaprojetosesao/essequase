@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Autorizações </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let autorizar of listaAutorizar | async">
+      <ion-label>{{ autorizar.motivo }}</ion-label>
+      <ion-label>{{ autorizar.parentesco }}</ion-label>
+      <ion-label>{{ autorizar.data }}</ion-label>
+      <ion-label>{{ autorizar.horario }}</ion-label>
+      <ion-button (click)="excluir(autorizar.key)" href="autorizar-listar">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-button expand=full href='autorizar-salvar' shape='round'> Voltar para tela de Autorização </ion-button>
+  <ion-button expand=full href='pagina' shape='round'> Voltar para tela inicial </ion-button>
+</ion-content>

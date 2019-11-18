@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Autorização de Alunos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #meuForm='ngForm'>
+    <ion-item>
+      <ion-label position="floating"> Email: </ion-label>
+      <ion-input #email='ngModel' type="text" [(ngModel)]="usuario.email" name='email' placeholder="Insire seu Email!" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="email.errors && email.touched">
+      <ion-label> Email é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> Senha: </ion-label>
+      <ion-input #senha='ngModel' type="password" [(ngModel)]="usuario.senha" name='senha' placeholder="Insire sua senha!" required minlength='6'> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="senha.errors && senha.touched">
+      <ion-label> A senha é obrigatória e precisa ter no mínimo 6 caracteres! </ion-label>
+    </span>
+
+    <ion-button [disabled]='!meuForm.form.valid' expand="full" (click)="logar()" shape='round'> Acessar </ion-button>
+    <ion-button [disabled]='!meuForm.form.valid' expand="full" (click)='cadastrar()' shape='round'> Cadastre-se </ion-button>
+    <ion-button expand="full" (click)="redefinir()" shape='round'> Redefinir senha </ion-button>
+
+  </form>
+</ion-content>

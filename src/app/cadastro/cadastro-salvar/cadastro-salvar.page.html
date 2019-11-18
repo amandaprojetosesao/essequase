@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Cadastro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #meuForm='ngForm'>
+    <ion-item>
+      <ion-label position="floating"> Nome: </ion-label>
+      <ion-input #nome='ngModel' type="text" [(ngModel)]="cadastro.nome" name='nome' placeholder="Insire seu nome!" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="nome.errors && nome.touched">
+      <ion-label> Nome é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> RG: </ion-label>
+      <ion-input #rg='ngModel' type="string" [(ngModel)]="cadastro.rg" name='rg' placeholder="Insire seu RG" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="rg.errors && rg.touched">
+      <ion-label> RG é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> CPF: </ion-label>
+      <ion-input #cpf='ngModel' type="string" [(ngModel)]="cadastro.cpf" name='cpf' placeholder="Insire o seu CPF" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="cpf.errors && cpf.touched">
+      <ion-label> CPF é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> Aluno(a): </ion-label>
+      <ion-input #cadastro='ngModel' type="text" [(ngModel)]="cadastro.cadastro" name='cadastro' placeholder="Insire o(a) aluno(a) que você está relacionado!" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="cadastro.errors && cadastro.touched">
+      <ion-label> O aluno é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> Curso: </ion-label>
+      <ion-select #curso='ngModel' [(ngModel)]="cadastro.curso" name='curso' placeholder="Selecione o curso no qual o(a) aluno(a) está matriculado" cancelText="Cancelar" okText="Ok" required>
+        <ion-select-option value="Agroindútria"> Agroindútria </ion-select-option>
+        <ion-select-option value="Informática"> Informática </ion-select-option>
+        <ion-select-option value="Mecatrônica"> Mecatrônica </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <span style='color:red' *ngIf="curso.errors && curso.touched">
+      <ion-label> Curso é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> Ano: </ion-label>
+      <ion-select #ano='ngModel' [(ngModel)]="cadastro.ano" name='ano' placeholder="Selecione o ano no qual o aluno(a) se matriculou" cancelText="Cancelar" okText="Ok" required>
+        <ion-select-option value="2020"> 2020 </ion-select-option>
+        <ion-select-option value="2019"> 2019 </ion-select-option>
+        <ion-select-option value="2018"> 2018 </ion-select-option>
+        <ion-select-option value="2017"> 2017 </ion-select-option>
+        <ion-select-option value="2016"> 2016 </ion-select-option>
+        <ion-select-option value="2015"> 2015 </ion-select-option>
+        <ion-select-option value="2014"> 2014 </ion-select-option>
+        <ion-select-option value="2013"> 2013 </ion-select-option>
+        <ion-select-option value="2012"> 2012 </ion-select-option>
+        <ion-select-option value="2011"> 2011 </ion-select-option>
+        <ion-select-option value="2010"> 2010 </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <span style='color:red' *ngIf="ano.errors && ano.touched">
+      <ion-label> Ano é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> Grau de Parentesco: </ion-label>
+      <ion-input #grau='ngModel' type="text" [(ngModel)]="cadastro.grau" name='grau' placeholder="Insire a sua relação de parentesco com o(a) aluno(a)!" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="grau.errors && grau.touched">
+      <ion-label> Grau é obrigatório! </ion-label>
+    </span>
+
+    <ion-button [disabled]='!meuForm.form.valid' (click)="salvar()" expand=full shape='round'> Cadastrar </ion-button>
+    <ion-button expand=full href='pagina' shape='round'> Voltar </ion-button>
+  </form>
+</ion-content>
