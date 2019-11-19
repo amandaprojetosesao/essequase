@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let cadastro of listaCadastro | async">
+    <ion-item *ngFor="let cadastro of listarCadastro | async">
       <ion-label>{{ cadastro.nome }}</ion-label>
       <ion-label>{{ cadastro.aluno }}</ion-label>
       <ion-label>{{ cadastro.curso }}</ion-label>

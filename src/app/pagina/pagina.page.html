@@ -5,9 +5,24 @@
 </ion-header>
 
 <ion-content>
-  <ion-button expand=full href='cadastro-salvar' shape='round'> Se Cadastre </ion-button>
-  <ion-button expand=full href='cadastro-listar' shape='round'> Ver Cadastros </ion-button>
-  <ion-button expand=full href='autorizar-salvar' shape='round'> Enviar Autorização </ion-button>
-  <ion-button expand=full href='autorizar-listar' shape='round'> Ver Autorizações </ion-button>
-  <ion-button expand=full href='home' shape='round'> Sair </ion-button>
+  <ion-content>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-label position="floating"> Cadastro </ion-label>
+        <ion-select [(ngModel)]="acao" (ionChange)="acessar()" cancelText="Cancelar" okText="Ok">
+          <ion-select-option value="cadastro-salvar"> Fazer Cadastro </ion-select-option>
+          <ion-select-option value="cadastro-listar"> Conferir seu Cadastro </ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating"> Autorizar </ion-label>
+        <ion-select [(ngModel)]="acao" (ionChange)="acessar()" cancelText="Cancelar" okText="Ok">
+          <ion-select-option value="autorizar-salvar"> Enviar Autorização </ion-select-option>
+          <ion-select-option value="autorizar-listar"> Ver Todas Autorizações </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </div>
+
+  <ion-button expand="full" href="home" shape='round'> Sair </ion-button>
 </ion-content>

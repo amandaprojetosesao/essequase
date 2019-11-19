@@ -15,32 +15,32 @@ import { ModalController } from '@ionic/angular';
 })
 export class AutorizarSalvarPage implements OnInit {
 
-    autorizar: Autorizar = new Autorizar();
+  autorizar: Autorizar = new Autorizar();
 
-    listaCadastro: Observable<Cadastro[]>;
+  listarCadastro: Observable<Cadastro[]>;
 
 
-    constructor(private fire: AngularFireDatabase, private modalController: ModalController,
-      private rota: Router
-    ) {
-      this.listaCadastro = this.fire.list<Cadastro>('cadastro').snapshotChanges().pipe(
-        map(lista => lista.map(linha => ({ key: linha.payload.key, ...linha.payload.val() })))
-      );
-    }
+  constructor(private fire: AngularFireDatabase, private modalController: ModalController,
+    private rota: Router
+  ) {
+    this.listarCadastro = this.fire.list<Cadastro>('cadastro').snapshotChanges().pipe(
+      map(listar => listar.map(linha => ({ key: linha.payload.key, ...linha.payload.val() })))
+    );
+  }
   ngOnInit() {
   }
 
-  enviar() {
-     if (this.autorizar.key == null) {
-       this.fire.list('autorizar').push(this.autorizar);
-       this.autorizar = new Autorizar();
-       this.rota.navigate(['autorizar-listar'])
-       alert('Salvo com sucesso!')
-     } else {
-       this.fire.object('autorizar/' + this.autorizar.key).update(this.autorizar);
-       this.modalController.dismiss();
-     }
+  salvar() {
+    if (this.autorizar.key == null) {
+      this.fire.list('autorizar').push(this.autorizar);
+      this.autorizar = new Autorizar();
+      this.rota.navigate(['autorizar-listar'])
+      alert('Salvo com sucesso!')
+    } else {
+      this.fire.object('autorizar/' + this.autorizar.key).update(this.autorizar);
+      this.modalController.dismiss();
+    }
 
-   }
+  }
 
- }
+}

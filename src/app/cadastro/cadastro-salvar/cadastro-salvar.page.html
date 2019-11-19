@@ -37,19 +37,19 @@
 
     <ion-item>
       <ion-label position="floating"> Aluno(a): </ion-label>
-      <ion-input #cadastro='ngModel' type="text" [(ngModel)]="cadastro.cadastro" name='cadastro' placeholder="Insire o(a) aluno(a) que você está relacionado!" required> </ion-input>
+      <ion-input #aluno='ngModel' type="text" [(ngModel)]="cadastro.aluno" name='aluno' placeholder="Insire o(a) aluno(a) que você está relacionado!" required> </ion-input>
     </ion-item>
 
-    <span style='color:red' *ngIf="cadastro.errors && cadastro.touched">
+    <span style='color:red' *ngIf="aluno.errors && aluno.touched">
       <ion-label> O aluno é obrigatório! </ion-label>
     </span>
 
     <ion-item>
       <ion-label position="floating"> Curso: </ion-label>
       <ion-select #curso='ngModel' [(ngModel)]="cadastro.curso" name='curso' placeholder="Selecione o curso no qual o(a) aluno(a) está matriculado" cancelText="Cancelar" okText="Ok" required>
-        <ion-select-option value="Agroindútria"> Agroindútria </ion-select-option>
-        <ion-select-option value="Informática"> Informática </ion-select-option>
-        <ion-select-option value="Mecatrônica"> Mecatrônica </ion-select-option>
+        <ion-select-option value="agro"> Agroindútria </ion-select-option>
+        <ion-select-option value="info"> Informática </ion-select-option>
+        <ion-select-option value="meca"> Mecatrônica </ion-select-option>
       </ion-select>
     </ion-item>
 
@@ -65,12 +65,6 @@
         <ion-select-option value="2018"> 2018 </ion-select-option>
         <ion-select-option value="2017"> 2017 </ion-select-option>
         <ion-select-option value="2016"> 2016 </ion-select-option>
-        <ion-select-option value="2015"> 2015 </ion-select-option>
-        <ion-select-option value="2014"> 2014 </ion-select-option>
-        <ion-select-option value="2013"> 2013 </ion-select-option>
-        <ion-select-option value="2012"> 2012 </ion-select-option>
-        <ion-select-option value="2011"> 2011 </ion-select-option>
-        <ion-select-option value="2010"> 2010 </ion-select-option>
       </ion-select>
     </ion-item>
 

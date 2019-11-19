@@ -5,8 +5,10 @@
 </ion-header>
 
 <ion-content>
+  <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let autorizar of listaAutorizar | async">
+<ion-item *ngFor="let autorizar of listarFiltro">
+      <ion-label>{{ autorizar.cadastro }}</ion-label>
       <ion-label>{{ autorizar.motivo }}</ion-label>
       <ion-label>{{ autorizar.parentesco }}</ion-label>
       <ion-label>{{ autorizar.data }}</ion-label>

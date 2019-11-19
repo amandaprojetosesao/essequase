@@ -32,4 +32,4 @@ export class CadastroSalvarPage implements OnInit {
 
    }
 
- }
+}

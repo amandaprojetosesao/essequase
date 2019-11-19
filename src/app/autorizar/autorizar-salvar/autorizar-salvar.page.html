@@ -10,12 +10,16 @@
   <form #meuForm='ngForm'>
     <ion-item>
       <ion-label position="floating"> Aluno: </ion-label>
-      <ion-select [(ngModel)]="autorizar.cadastro" placeholder="Selecione o aluno!">
-        <ion-select-option *ngFor='let cadastro of listaCadastro | async' [value]="cadastro">
-          {{cadastro.cadastro}}
+      <ion-select #aluno='ngModel'  [(ngModel)]="autorizar.cadastro" name='aluno' placeholder="Selecione o aluno!" cancelText="Cancelar" okText="Ok" required>
+        <ion-select-option *ngFor='let cadastro of listarCadastro | async' [value]="cadastro">
+          {{cadastro.aluno}}
         </ion-select-option>
       </ion-select>
-    </ion-item>
+  </ion-item>
+
+  <span style='color:red' *ngIf="aluno.errors && aluno.touched">
+    <ion-label> Aluno é obrigatório! </ion-label>
+  </span>
 
     <ion-item>
       <ion-label position="floating"> Motivo para saída do aluno: </ion-label>
@@ -46,7 +50,7 @@
 
     <ion-item>
       <ion-label position="floating"> Data: </ion-label>
-      <ion-input #data='ngModel' type="text" [(ngModel)]="autorizar.data" name='data' placeholder="Insire a data" required> </ion-input>
+      <ion-input #data='ngModel' type="date" displayFormat="DD MM YY" [(ngModel)]="autorizar.data" name='data' placeholder="Insire a data" required> </ion-input>
     </ion-item>
 
     <span style='color:red' *ngIf="data.errors && data.touched">
@@ -55,14 +59,14 @@
 
     <ion-item>
       <ion-label position="floating"> Horário: </ion-label>
-      <ion-input #horario='ngModel' type="text" [(ngModel)]="autorizar.horario" name='horario' placeholder="Insire o horario" required> </ion-input>
+      <ion-input #horario='ngModel' type="time" displayFormat="HH:mms" [(ngModel)]="autorizar.horario" name='horario' placeholder="Insire o horario" required> </ion-input>
     </ion-item>
 
     <span style='color:red' *ngIf="horario.errors && horario.touched">
       <ion-label> O horário é obrigatório! </ion-label>
     </span>
 
-    <ion-button [disabled]='!meuForm.form.valid' expand="full" (click)='enviar()' shape='round'> Enviar </ion-button>
+    <ion-button [disabled]='!meuForm.form.valid' expand="full" (click)='salvar()' shape='round'> Enviar </ion-button>
     <ion-button expand=full href='pagina' shape='round'> Voltar </ion-button>
 
   </form>
