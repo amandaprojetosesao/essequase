@@ -19,7 +19,7 @@
 
     <ion-item>
       <ion-label position="floating"> RG: </ion-label>
-      <ion-input #rg='ngModel' type="string" [(ngModel)]="cadastro.rg" name='rg' placeholder="Insire seu RG" required> </ion-input>
+      <ion-input #rg='ngModel' type="string" [(ngModel)]="cadastro.rg" name='rg' placeholder="Insire seu RG!" required> </ion-input>
     </ion-item>
 
     <span style='color:red' *ngIf="rg.errors && rg.touched">
@@ -28,7 +28,7 @@
 
     <ion-item>
       <ion-label position="floating"> CPF: </ion-label>
-      <ion-input #cpf='ngModel' type="string" [(ngModel)]="cadastro.cpf" name='cpf' placeholder="Insire o seu CPF" required minlength='11' maxlength='11'> </ion-input>
+      <ion-input #cpf='ngModel' type="string" [(ngModel)]="cadastro.cpf" name='cpf' placeholder="Insire o seu CPF!" required minlength='11' maxlength='11'> </ion-input>
     </ion-item>
 
     <span style='color:red' *ngIf="cpf.errors && cpf.touched">
@@ -37,16 +37,16 @@
 
     <ion-item>
       <ion-label position="floating"> Aluno(a): </ion-label>
-      <ion-input #aluno='ngModel' type="text" [(ngModel)]="cadastro.aluno" name='aluno' placeholder="Insire o(a) aluno(a) que você está relacionado!" required> </ion-input>
+      <ion-input #aluno='ngModel' type="text" [(ngModel)]="cadastro.aluno" name='aluno' placeholder="Insire nome do(a) aluno(a)!" required> </ion-input>
     </ion-item>
 
     <span style='color:red' *ngIf="aluno.errors && aluno.touched">
-      <ion-label> O aluno é obrigatório! </ion-label>
+      <ion-label> O nome do(a) aluno(a) é obrigatório! </ion-label>
     </span>
 
     <ion-item>
       <ion-label position="floating"> Curso: </ion-label>
-      <ion-select #curso='ngModel' [(ngModel)]="cadastro.curso" name='curso' placeholder="Selecione o curso no qual o(a) aluno(a) está matriculado" cancelText="Cancelar" okText="Ok" required>
+      <ion-select #curso='ngModel' [(ngModel)]="cadastro.curso" name='curso' placeholder="Selecione o curso no qual o(a) aluno(a) está matriculado!" cancelText="Cancelar" okText="Ok" required>
         <ion-select-option value="Agroindútria"> Agroindútria </ion-select-option>
         <ion-select-option value="Informática"> Informática </ion-select-option>
         <ion-select-option value="Mecatrônica"> Mecatrônica </ion-select-option>
@@ -59,7 +59,7 @@
 
     <ion-item>
       <ion-label position="floating"> Ano: </ion-label>
-      <ion-select #ano='ngModel' [(ngModel)]="cadastro.ano" name='ano' placeholder="Selecione o ano no qual o aluno(a) se matriculou" cancelText="Cancelar" okText="Ok" required>
+      <ion-select #ano='ngModel' [(ngModel)]="cadastro.ano" name='ano' placeholder="Selecione o ano no qual o(a) aluno(a) se matriculou!" cancelText="Cancelar" okText="Ok" required>
         <ion-select-option value="2020"> 2020 </ion-select-option>
         <ion-select-option value="2019"> 2019 </ion-select-option>
         <ion-select-option value="2018"> 2018 </ion-select-option>
@@ -79,6 +79,51 @@
 
     <span style='color:red' *ngIf="grau.errors && grau.touched">
       <ion-label> Grau é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> Motivo para saída do(a) aluno(a): </ion-label>
+      <ion-input #motivo='ngModel' type="text" [(ngModel)]="cadastro.motivo" name='motivo' placeholder="Insire o motivo!" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="motivo.errors && motivo.touched">
+      <ion-label> O motivo é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> O nome de quem buscará o(a) aluno(a): </ion-label>
+      <ion-input #busca='ngModel' type="text" [(ngModel)]="cadastro.busca" name='busca' placeholder="Insire o nome!" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="busca.errors && busca.touched">
+      <ion-label> O nome é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> Parentesco de quem buscará o(a) aluno(a): </ion-label>
+      <ion-input #parentesco='ngModel' type="text" [(ngModel)]="cadastro.parentesco" name='parentesco' placeholder="Insire o parentesco!" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="parentesco.errors && parentesco.touched">
+      <ion-label> O parentesco é obrigatório! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> Data: </ion-label>
+      <ion-input #data='ngModel' type="date" displayFormat="DD MM YY" [(ngModel)]="cadastro.data" name='data' placeholder="Insire a data!" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="data.errors && data.touched">
+      <ion-label> A data é obrigatória! </ion-label>
+    </span>
+
+    <ion-item>
+      <ion-label position="floating"> Horário: </ion-label>
+      <ion-input #horario='ngModel' type="time" displayFormat="HH:mms" [(ngModel)]="cadastro.horario" name='horario' placeholder="Insire o horario!" required> </ion-input>
+    </ion-item>
+
+    <span style='color:red' *ngIf="horario.errors && horario.touched">
+      <ion-label> O horário é obrigatório! </ion-label>
     </span>
 
     <ion-button [disabled]='!meuForm.form.valid' (click)="salvar()" expand=full shape='round'> Cadastrar </ion-button>

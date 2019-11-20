@@ -6,6 +6,11 @@ export class Cadastro {
   curso: string;
   ano: string;
   grau: string;
+  motivo: string;
+  busca : string;
+  parentesco: string;
+  data: string;
+  horario: string;
   key: string;
 
 }

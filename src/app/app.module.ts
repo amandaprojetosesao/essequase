@@ -12,12 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database'
 import { CadastroSalvarPageModule } from './cadastro/cadastro-salvar/cadastro-salvar.module';
-import { AutorizarSalvarPageModule } from './autorizar/autorizar-salvar/autorizar-salvar.module';
-
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, CadastroSalvarPageModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyC71HfES9TFGfzpf7awf13immQBHY2ArP0",
       authDomain: "projeto-7ac2b.firebaseapp.com",

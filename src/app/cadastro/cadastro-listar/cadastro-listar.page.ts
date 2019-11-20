@@ -31,15 +31,5 @@ export class CadastroListarPage implements OnInit {
   ngOnInit() {
   }
 
-  excluir(entidade) {
-    this.fire.list('cadastro').remove(entidade.key);
-  }
-
-  async alterar(cadastro) {
-    const tela = await this.modal.create({
-      component: CadastroSalvarPage, componentProps: { cadastro: cadastro }
-    });
-    tela.present();
-  }
 
 }

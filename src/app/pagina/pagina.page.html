@@ -14,14 +14,6 @@
           <ion-select-option value="cadastro-listar"> Conferir seu Cadastro </ion-select-option>
         </ion-select>
       </ion-item>
-
-      <ion-item>
-        <ion-label position="floating"> Autorizar </ion-label>
-        <ion-select [(ngModel)]="acao" (ionChange)="acessar()" cancelText="Cancelar" okText="Ok">
-          <ion-select-option value="autorizar-salvar"> Enviar Autorização </ion-select-option>
-          <ion-select-option value="autorizar-listar"> Ver Todas Autorizações </ion-select-option>
-        </ion-select>
-      </ion-item>
     </div>
 
   <ion-button expand="full" href="home" shape='round'> Sair </ion-button>
