@@ -1,4 +1,4 @@
-import { Cadastro } from 'src/app/cadastro/entidade/cadastro';
+import { Cadastro } from '../../cadastro/entidade/cadastro';
 export class Autorizar{
   cadastro : Cadastro;
   motivo: string;

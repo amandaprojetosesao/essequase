@@ -17,7 +17,7 @@ import { AutorizarSalvarPageModule } from './autorizar/autorizar-salvar/autoriza
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
+  imports: [BrowserModule, CadastroSalvarPageModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyC71HfES9TFGfzpf7awf13immQBHY2ArP0",
       authDomain: "projeto-7ac2b.firebaseapp.com",

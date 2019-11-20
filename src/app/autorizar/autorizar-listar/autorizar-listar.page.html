@@ -7,13 +7,12 @@
 <ion-content>
   <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"></ion-searchbar>
   <ion-list>
-<ion-item *ngFor="let autorizar of listarFiltro">
-      <ion-label>{{ autorizar.cadastro }}</ion-label>
-      <ion-label>{{ autorizar.motivo }}</ion-label>
-      <ion-label>{{ autorizar.parentesco }}</ion-label>
-      <ion-label>{{ autorizar.data }}</ion-label>
-      <ion-label>{{ autorizar.horario }}</ion-label>
-      <ion-button (click)="excluir(autorizar.key)" href="autorizar-listar">
+    <ion-item *ngFor="let autorizar of listarFiltro">
+      <ion-label> <b> Aluno: {{ autorizar.cadastro }}</b> <br> Motivo: {{ autorizar.motivo }} <br />
+        <b> Nome: {{ autorizar.nome }}</b> <br> Motivo: {{ autorizar.motivo }} <br />
+        <b> Data: {{ autorizar.data }}</b> <br> Horário: {{ autorizar.horario }} <br /></ion-label>
+
+      <ion-button (click)="excluir(autorizar)">
         <ion-icon name="trash"></ion-icon>
       </ion-button>
     </ion-item>

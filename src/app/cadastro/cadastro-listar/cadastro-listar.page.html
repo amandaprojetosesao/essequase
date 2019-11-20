@@ -5,17 +5,23 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let cadastro of listarCadastro | async">
-      <ion-label>{{ cadastro.nome }}</ion-label>
-      <ion-label>{{ cadastro.aluno }}</ion-label>
-      <ion-label>{{ cadastro.curso }}</ion-label>
-      <ion-label>{{ cadastro.ano }}</ion-label>
-      <ion-button (click)="excluir(cadastro.key)" href="cadastro-listar">
-        <ion-icon name="trash"></ion-icon>
-      </ion-button>
-    </ion-item>
-  </ion-list>
-  <ion-button expand=full href='cadastro-salvar' shape='round'> Voltar para tela de Cadastro </ion-button>
+  <ion-card>
+    <ion-list>
+      <ion-item *ngFor="let cadastro of listaCadastro | async">
+        <ion-label> <b> Nome: {{ cadastro.nome }}</b> <br> RG: {{ cadastro.rg }} <br />
+          <b> CPF: {{ cadastro.cpf }}</b> <br> Aluno: {{ cadastro.aluno }} <br />
+          <b> Curso: {{ cadastro.curso }}</b> <br> Ano: {{ cadastro.ano }} <br />
+          <b> Grau: {{ cadastro.grau }}</b></ion-label>
+
+        <ion-button (click)="excluir(cadastro)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+        <ion-button (click)="alterar(cadastro)">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <ion-button expand=full href='cadastro-salvar' shape='round'> Voltar para tela de Cadastrar </ion-button>
   <ion-button expand=full href='pagina' shape='round'> Voltar para tela inicial </ion-button>
 </ion-content>

@@ -28,7 +28,7 @@
 
     <ion-item>
       <ion-label position="floating"> CPF: </ion-label>
-      <ion-input #cpf='ngModel' type="string" [(ngModel)]="cadastro.cpf" name='cpf' placeholder="Insire o seu CPF" required> </ion-input>
+      <ion-input #cpf='ngModel' type="string" [(ngModel)]="cadastro.cpf" name='cpf' placeholder="Insire o seu CPF" required minlength='11' maxlength='11'> </ion-input>
     </ion-item>
 
     <span style='color:red' *ngIf="cpf.errors && cpf.touched">
@@ -47,9 +47,9 @@
     <ion-item>
       <ion-label position="floating"> Curso: </ion-label>
       <ion-select #curso='ngModel' [(ngModel)]="cadastro.curso" name='curso' placeholder="Selecione o curso no qual o(a) aluno(a) está matriculado" cancelText="Cancelar" okText="Ok" required>
-        <ion-select-option value="agro"> Agroindútria </ion-select-option>
-        <ion-select-option value="info"> Informática </ion-select-option>
-        <ion-select-option value="meca"> Mecatrônica </ion-select-option>
+        <ion-select-option value="Agroindútria"> Agroindútria </ion-select-option>
+        <ion-select-option value="Informática"> Informática </ion-select-option>
+        <ion-select-option value="Mecatrônica"> Mecatrônica </ion-select-option>
       </ion-select>
     </ion-item>
 

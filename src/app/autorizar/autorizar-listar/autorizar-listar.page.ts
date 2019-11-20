@@ -34,14 +34,14 @@ export class AutorizarListarPage implements OnInit {
       this.listarFiltro = _.filter(this.autorizar, _.conforms(this.filtro));
     })
   }
-  excluir(key) {
-    this.fire.list('autorizar').remove(key);
-    alert("excluido");
-  }
 
   filtrar() {
     this.filtro['cadastro'] = val => val.includes(this.valor);
     this.listarFiltro = _.filter(this.autorizar, _.conforms(this.filtro));
+  }
+
+  excluir(entidade) {
+    this.fire.list('autorizar').remove(entidade.key);
   }
 
 }
