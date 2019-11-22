@@ -4,7 +4,6 @@ export class Cadastro {
   cpf: string;
   aluno: string;
   curso: string;
-  ano: string;
   grau: string;
   motivo: string;
   busca : string;

@@ -10,10 +10,10 @@
       <ion-item *ngFor="let cadastro of listaCadastro | async">
         <ion-label> <b> Nome: {{ cadastro.nome }}</b> <br> RG: {{ cadastro.rg }} <br />
           <b> CPF: {{ cadastro.cpf }}</b> <br> Aluno: {{ cadastro.aluno }} <br />
-          <b> Curso: {{ cadastro.curso }}</b> <br> Ano: {{ cadastro.ano }} <br />
-          <b> Grau: {{ cadastro.grau }}</b> <br> Motivo: {{ cadastro.motivo }} <br />
-          <b> Quem Buscara: {{ cadastro.busca }}</b> <br> Parentesco: {{ cadastro.parentesco }} <br />
-          <b> Data: {{ cadastro.data }}</b> <br> Horário: {{ cadastro.horario }} <br /></ion-label>
+          <b> Curso: {{ cadastro.curso }}</b> <br> Grau: {{ cadastro.grau }}<br />
+          <b> Motivo: {{ cadastro.motivo }} </b> <br> Quem Buscara: {{ cadastro.busca }}<br />
+          <b> Parentesco: {{ cadastro.parentesco }} </b> <br> Data: {{ cadastro.data }}<br />
+          <b> Horário: {{ cadastro.horario }} </b></ion-label>
 
       </ion-item>
     </ion-list>

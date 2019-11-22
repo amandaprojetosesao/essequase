@@ -47,29 +47,23 @@
     <ion-item>
       <ion-label position="floating"> Curso: </ion-label>
       <ion-select #curso='ngModel' [(ngModel)]="cadastro.curso" name='curso' placeholder="Selecione o curso no qual o(a) aluno(a) está matriculado!" cancelText="Cancelar" okText="Ok" required>
-        <ion-select-option value="Agroindútria"> Agroindútria </ion-select-option>
-        <ion-select-option value="Informática"> Informática </ion-select-option>
-        <ion-select-option value="Mecatrônica"> Mecatrônica </ion-select-option>
+        <ion-select-option value="1° Agroindútria"> 1° Agroindútria </ion-select-option>
+        <ion-select-option value="2° Agroindútria"> 2° Agroindútria </ion-select-option>
+        <ion-select-option value="3° Agroindútria"> 3° Agroindútria </ion-select-option>
+        <ion-select-option value="4° Agroindútria"> 4° Agroindútria </ion-select-option>
+        <ion-select-option value="1° Informática"> 1° Informática </ion-select-option>
+        <ion-select-option value="2° Informática"> 2° Informática </ion-select-option>
+        <ion-select-option value="3° Informática"> 3° Informática </ion-select-option>
+        <ion-select-option value="4° Informática"> 4° Informática </ion-select-option>
+        <ion-select-option value="1° Mecatrônica"> 1° Mecatrônica </ion-select-option>
+        <ion-select-option value="2° Mecatrônica"> 2° Mecatrônica </ion-select-option>
+        <ion-select-option value="3° Mecatrônica"> 3° Mecatrônica </ion-select-option>
+        <ion-select-option value="4° Mecatrônica"> 4° Mecatrônica </ion-select-option>
       </ion-select>
     </ion-item>
 
     <span style='color:red' *ngIf="curso.errors && curso.touched">
       <ion-label> Curso é obrigatório! </ion-label>
-    </span>
-
-    <ion-item>
-      <ion-label position="floating"> Ano: </ion-label>
-      <ion-select #ano='ngModel' [(ngModel)]="cadastro.ano" name='ano' placeholder="Selecione o ano no qual o(a) aluno(a) se matriculou!" cancelText="Cancelar" okText="Ok" required>
-        <ion-select-option value="2020"> 2020 </ion-select-option>
-        <ion-select-option value="2019"> 2019 </ion-select-option>
-        <ion-select-option value="2018"> 2018 </ion-select-option>
-        <ion-select-option value="2017"> 2017 </ion-select-option>
-        <ion-select-option value="2016"> 2016 </ion-select-option>
-      </ion-select>
-    </ion-item>
-
-    <span style='color:red' *ngIf="ano.errors && ano.touched">
-      <ion-label> Ano é obrigatório! </ion-label>
     </span>
 
     <ion-item>
